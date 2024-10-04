@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+	body {
+	    margin: 0;
+	}
+	h2 {
+	    text-align: center;
+	
+	}
+	.section {
+	    border-radius: 8px;
+	    margin: 20px auto;
+	    padding: 20px;
+	    max-width: 900px;
+	}
+	
+	h3 {
+	    color: #555;
+	}
+	p {
+	    line-height: 1.6;
+	}
+	.criteria {
+	    margin: 10px 0;
+	    padding: 10px;
+	    border-radius: 5px;
+	}
+	.normal {
+	    color: green;
+	    font-weight: bold;
+	}
+	.caution {
+	    color: orange;
+	    font-weight: bold;
+	}
+	.danger {
+	    color: red;
+	    font-weight: bold;
+	}

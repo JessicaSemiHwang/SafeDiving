@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="UTF-8">
+		<title>Safe Diving</title>
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="./js/openWeather.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		
+</head>
+
+<style>
+#caption{
+	color: grey;
+	font-size:small;
+	align-items: center;
+	justify-content: center;
+	text-align:center;
+	padding:10px;
+}
+</style>
+
+<body>
+	<div id="header"></div> 
+
+	<div class="container" style="text-align:center; padding:50px 0; display:flex; justify-content:center;">
+	<br>
+	<div "></div><br>
+		<table class="table" id="openWeather" style="width:600px;">
+			<thead>
+				<tr>
+					<th colspan="2" id="currentDate" style="margin-bottom: 20px; font-size: 20px;"> </th> 
+				<tr>
+				<tr>
+					<th>날씨</th>
+					<th>설명</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	<br>
+	</div>
+	<p id="caption"><b>현재 지역 기준.</b> 위치정보를 '허용'해주세요</p><br>
+
+	<div id="footer"></div>
+
+    <script>
+		// 오늘 날짜와 요일 추가
+		function formatDate(date) {
+			const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+			return date.toLocaleDateString('ko-KR', options);
+		}
+	
+		const today = new Date();
+		const formattedDate = formatDate(today);
+		document.getElementById('currentDate').innerHTML = formattedDate.replace(' ', '<br>'); // 줄바꿈 처리
+
+        // 헤더 파일 삽입
+        var xhrHeader = new XMLHttpRequest();
+        xhrHeader.open('GET', './include/header.jsp', true);
+        xhrHeader.onreadystatechange = function () {
+            if (xhrHeader.readyState === 4 && xhrHeader.status === 200) {
+                document.getElementById('header').innerHTML = xhrHeader.responseText;
+            }
+        };
+        xhrHeader.send();
+
+        // 푸터 파일 삽입
+        var xhrFooter = new XMLHttpRequest();
+        xhrFooter.open('GET', './include/footer.jsp', true);
+        xhrFooter.onreadystatechange = function () {
+            if (xhrFooter.readyState === 4 && xhrFooter.status === 200) {
+                document.getElementById('footer').innerHTML = xhrFooter.responseText;
+            }
+        };
+        xhrFooter.send();
+    </script>
+</body>
+</html>
+
+
