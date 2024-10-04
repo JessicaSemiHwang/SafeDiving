@@ -1,5 +1,10 @@
 # Project Name : Safe Diving
 
+![safediving1](https://github.com/user-attachments/assets/f8f77942-9b38-4cef-8d76-4fbea327a31d)
+
+![safediving2](https://github.com/user-attachments/assets/10f8e94e-8344-4850-b8db-ac7ca82f8a1c)
+
+
 ## 🔰프로젝트 소개
 
 ---
